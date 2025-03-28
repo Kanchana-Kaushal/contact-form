@@ -34,6 +34,7 @@ function Form(props) {
             id="firstName"
             {...register("firstName", { required: true, maxLength: 20 })}
             className={`text-Grey-900 focus:ring-Green-600 cursor-pointer rounded-sm p-2 ring-1 outline-none focus:ring-2 ${errors?.firstName ? "ring-red-500" : "ring-Grey-500"}`}
+            aria-invalid={errors?.firstName ? true : false}
           />
           {errors?.firstName?.type === "required" ? (
             <p className="text-sm text-red-500">This field is required</p>
@@ -54,6 +55,7 @@ function Form(props) {
             id="lastName"
             {...register("lastName", { required: true, max: 20 })}
             className={`text-Grey-900 focus:ring-Green-600 cursor-pointer rounded-sm p-2 ring-1 outline-none focus:ring-2 ${errors?.lastName ? "ring-red-500" : "ring-Grey-500"}`}
+            aria-invalid={errors?.lastName ? true : false}
           />
 
           {errors?.lastName?.type === "required" ? (
@@ -78,6 +80,7 @@ function Form(props) {
           pattern: "/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/",
         })}
         className={`text-Grey-900 focus:ring-Green-600 mt-2 w-full cursor-pointer rounded-sm p-2 ring-1 outline-none focus:ring-2 ${errors?.email ? "ring-red-500" : "ring-Grey-500"}`}
+        aria-invalid={errors?.email ? true : false}
       />
       {errors?.email?.type === "pattern" ? (
         <p className="text-sm text-red-500">
@@ -133,6 +136,7 @@ function Form(props) {
         id="message"
         {...register("message", { required: true, min: 10, max: 150 })}
         className={`focus:ring-Green-600 mt-2 min-h-50 w-full cursor-pointer rounded-sm p-3 text-lg ring-1 outline-none focus:ring-2 lg:min-h-30 ${errors?.message ? "ring-red-500" : "ring-Grey-500"}`}
+        aria-invalid={errors?.message ? true : false}
       ></textarea>
       {errors?.message?.type === "required" ? (
         <p className="text-sm text-red-500">This field is required</p>
