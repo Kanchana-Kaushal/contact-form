@@ -1,4 +1,5 @@
 import { motion, AnimatePresence } from "motion/react";
+import successImg from "../assets/icon-success-check.svg";
 
 function Popup(props) {
   return (
@@ -11,7 +12,7 @@ function Popup(props) {
           exit={{ y: -170 }}
         >
           <div className="flex items-center gap-3">
-            <img src="/icon-success-check.svg" alt="success-tik-mark" />
+            <img src={successImg} alt="success-tik-mark" />
             <p className="text-lg font-bold text-gray-50">Message Sent!</p>
           </div>
           <p className="text-Grey-500">
